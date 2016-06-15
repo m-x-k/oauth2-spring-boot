@@ -1,0 +1,6 @@
+[submodule "client"]
+	path = client
+	url = git@github.com:m-x-k/oauth2-client-spring-boot-demo.git
+[submodule "server"]
+	path = server
+	url = git@github.com:m-x-k/oauth2-server-spring-boot-demo.git
