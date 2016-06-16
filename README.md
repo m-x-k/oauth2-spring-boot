@@ -4,5 +4,14 @@
 
 git clone https://github.com/m-x-k/oauth2-spring-boot.git
 
-git submodule update --init --recursive
+cd oauth2-spring-boot/
 
+git clone https://github.com/m-x-k/oauth2-server-spring-boot-demo.git server
+
+git clone https://github.com/m-x-k/oauth2-client-spring-boot-demo.git client
+
+## Build and run with docker
+
+gradle clean build
+
+docker-compose up
