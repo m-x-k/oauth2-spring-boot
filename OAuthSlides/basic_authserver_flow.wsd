@@ -1,0 +1,8 @@
+title Basic AuthServer Flow
+
+Browser->Site: Request URL: X
+Site->Site: Logged in? No
+Site->Browser: redirect to login
+Browser->AuthServer: Login
+AuthServer->Browser: redirect URL: X
+Browser->Site: load page X

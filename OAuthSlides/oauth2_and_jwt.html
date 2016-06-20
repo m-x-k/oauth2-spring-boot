@@ -1,0 +1,143 @@
+<!-- -*-  indent-tabs-mode:t;  -*- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>OAuth2 + JWT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="./reveal.js/css/theme/moon.css" id="theme"/>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+<section>
+	<h1>OAuth2 + JWT</h1>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-element-attributes="{_\s*?([^}]+?)}">
+  <script type="text/template">
+	## Basic vs Token Security
+
+	---
+
+	<!-- .slide: data-background="./cookie-token-auth.png" -->
+
+	---
+
+	## What is OAuth2?
+
+	---
+
+	<!-- .slide: data-background="./BasicAuthserverFlow.png" -->
+
+	---
+
+	## Is all this standard OAuth2?
+	- Example is checking if the user has a session by looking at the cookie for a valid auth token (i.e. one that hasn't expired).
+
+	- What about the standard oauth2 endpoints?
+	 - oauth/authorise
+	 - oauth/verify
+	 - oauth/refresh
+
+	---
+
+	## What is JWT?
+	- JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA.
+
+	---
+
+	<!-- .slide: data-background="./JWTExampleDebugger.png" -->
+
+	---
+
+	## Some benefits of token-based approach:
+	- Stateless
+	- Scales
+	- Token can hold user data
+
+	---
+
+	## Decisions
+
+	---
+
+	## REST API Authentication via JWT?
+	- Probably YES
+
+	---
+
+	## Web Site Authentication via JWT?
+	- MAYBE but requires JS libraries to generate or request the JWT.
+
+	---
+
+	## How to Secure JWT?
+	- JSON Web Signature (JWS): 
+	 - Verify the signature to confirm authenticity.
+
+	- JSON Web Encryption (JWE): 
+	 - Advanced for token data that is sensitive.
+
+	---
+
+	## Useful JWT libraries
+
+	---
+
+	## Java
+	- [spring-security-jwt](http://projects.spring.io/spring-security-oauth/docs/oauth2.html)
+	 - ... used to verify and authorize JWT tokens
+
+	- Other JWT libraries also exist 
+	 - [JJWT](https://github.com/jwtk/jjwt): JWT and JWS (not JWE)
+	 - [Nimbus Jose JWT](http://connect2id.com/products/nimbus-jose-jwt): JWT + JWS + JWE
+	 - ...
+
+	---
+
+	## Python
+	- [Flask-JWT](https://pythonhosted.org/Flask-JWT/)
+	- [JWS](https://github.com/brianloveswords/python-jws)
+
+	---
+
+	## AngularJS
+	- [angular-jwt](https://github.com/auth0/angular-jwt)
+
+	---
+
+	## Addtional useful resources
+	- [JWT IO](https://jwt.io)
+	 - information on spec and JWT debugger
+    - [Learn JSON Web Tokens](https://github.com/dwyl/learn-json-web-tokens)
+
+  </script>
+</section>
+
+</div>
+</div>
+
+        <script src="reveal.js/lib/js/head.min.js"></script>
+        <script src="reveal.js/js/reveal.js"></script>
+    <script>
+          Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          transition: 'none', // none/fade/slide/convex/concave/zoom
+          dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+          ]
+          });
+        </script>
+  </body>
+</html>

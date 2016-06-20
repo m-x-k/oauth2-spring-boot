@@ -4,3 +4,6 @@
 [submodule "server"]
 	path = server
 	url = git@github.com:m-x-k/oauth2-server-spring-boot-demo.git
+[submodule "OAuthSlides/reveal.js"]
+	path = OAuthSlides/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
