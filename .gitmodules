@@ -1,9 +1,9 @@
-[submodule "client"]
-	path = client
-	url = git@github.com:m-x-k/oauth2-client-spring-boot-demo.git
-[submodule "server"]
-	path = server
-	url = git@github.com:m-x-k/oauth2-server-spring-boot-demo.git
+[submodule "ui-app"]
+	path = ui-app
+	url = https://github.com/m-x-k/oauth2-spring-boot-ui-demo.git
+[submodule "rest-microservice"]
+        path = rest-microservice
+        url = https://github.com/m-x-k/oauth2-microservice-spring-boot-demo.git
 [submodule "OAuthSlides/reveal.js"]
 	path = OAuthSlides/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
